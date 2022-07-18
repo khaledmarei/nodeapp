@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>PalWork-SignSignUp</title>
+    
+    <!-- goggle fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-156446909-2");
+    
+    </script>
+  </head>
+  <body style="font-family: 'Tajawal', sans-serif;" >
+
+    <!-- CONTENT -->
+    <section class="section-border border-primary" >
+      <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center gx-0 min-vh-100">
+          <div class="col-8 col-md-6 col-lg-7 offset-md-1 order-md-2 mt-auto mt-md-0 pt-8 pb-4 py-md-11"  >
+
+
+            <!-- Image -->
+            <img src="../assets/img/illustrations/illustration-8.png" alt="..." class="img-fluid" >
+
+          </div>
+          <div class="col-12 col-md-5 col-lg-4 order-md-1 mb-auto mb-md-0 pb-8 py-md-11" dir="rtl">
+
+            <!-- Heading -->
+            <h1 class="mb-0 fw-bold text-center">
+              انشاء حساب
+            </h1>
+
+            <!-- Text -->
+            <p class="mb-6 text-center text-muted">
+              اصنع مجدك في لحظات
+            </p>
+
+            <!-- Form -->
+            <form class="mb-6" action="/singup&in&password/singUp" method="post">
+
+              <!-- UserName -->
+              <div class="form-group">
+                <label class="form-label" for="email" >
+                  الاسم الرباعي
+                </label>
+                <input type="text" class="form-control" id="email" placeholder="علام عبد اللطيف محمود لحلوح" name="userName" required>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group mb-5">
+                <label class="form-label" for="password">
+                  كلمة المرور
+                </label>
+                <input type="text" class="form-control" id="password" placeholder="ادخل كلمة المرور" name="passWord" required>
+              </div>
+
+
+
+              <!-- phone Number -->
+              <div class="form-group mb-5">
+                <label class="form-label" for="password">
+                  رقم الهاتف
+                </label>
+                <input type="tel" class="form-control" id="password" placeholder="رقم الهاتف لتسجيل الدخول" name="phoneNumber" required>
+              </div>
+
+
+              <!-- WhatsApp Number -->
+              <div class="form-group mb-5">
+                <label class="form-label" for="password">
+                  WhatsApp رقم
+                </label>
+                <input type="text" class="form-control" id="password" placeholder="ادخل رقم WhatsApp" name="whatsAppNumber" required>
+              </div>
+
+              <!-- Worker Or Contractor -->
+              <div class="form-group mb-5">
+                <label class="form-label" for="password">
+                  عامل ام مقاول؟
+                </label> <br>
+                <input type="checkbox" id="html" value="1" name="worker">
+                <label style="margin-left: 20px;" for="html">عامل</label>
+                <input type="checkbox" id="css" value="0" name="contractor">
+                <label for="css">مقاول</label><br>
+              </div>
+
+
+              <!-- verefication -->
+              <div class="form-group mb-5">
+                <button class="btn w-100 btn-primary">
+                  ارسل رمز التحقق الى الهاتف
+                </button>
+                <input type="text" class="form-control" id="password" placeholder="ادخل الرمز هنا">
+              </div>
+
+
+              <!-- Submit -->
+              <button class="btn w-100 btn-primary" type="submit"> انشاء حساب</button>
+
+            </form>
+
+
+            <!-- Text -->
+            <p class="mb-0 fs-sm text-center text-muted">
+              لديك حساب؟ <a href="/singup&in&password/singIn">سجل دخولك</a>.
+            </p>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>

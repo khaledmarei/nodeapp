@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>PalWork-AccountNotifications</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-156446909-2");
+    
+    </script>
+  </head>
+  <body class="bg-light" style="font-family: 'Tajawal', sans-serif;">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" dir="ltr">
+      <div class="container">
+    
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <span class="text-primary">PalWork</span>
+        </a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+    
+          <!-- Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fe fe-x"></i>
+          </button>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="" >
+                المجتمع
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarAccount">
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/posts&courses/Posts">
+                    المنشورات
+                  </a>
+                </li>
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/posts&courses/blog-search">
+                    قوي نفسك في ورشة تدريبية
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+
+            <li class="nav-item ">
+              <a class="nav-link " id="navbarPages" href="/find/FindContractor" >
+                احصل على عمل
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " id="navbarDocumentation" href="/find/FindWorker" >
+                ايجاد عامل
+              </a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="" >
+                الحساب
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarAccount">
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/account/account-general">
+                    الاعدادات
+                  </a>
+                </li>
+                <!-- <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/singup&in&password/singIn">
+                    تسجيل الدخول
+                  </a>
+                </li> -->
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/singup&in&password/singIn">
+                    تسجيل الخروج
+                  </a>
+                </li>
+                <!-- <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/singup&in&password/singUp">
+                    انشاء حساب
+                  </a>
+                </li> -->
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" href="/account/profile">
+                    صفحتي
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+
+          </ul>
+    
+          <!-- Button -->
+    
+        </div>
+    
+      </div>
+    </nav>
+    <!-- BREADCRUMB -->
+    <nav class="bg-dark d-md-none">
+      <div class="container-md">
+        <div class="row align-items-center">
+          <div class="col">
+
+
+
+          </div>
+          <div class="col-auto">
+
+            <!-- Toggler -->
+            <div class="navbar-dark">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidenavCollapse" aria-controls="sidenavCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </nav>
+
+    <!-- HEADER -->
+    <header class="bg-dark pt-9 pb-11 d-none d-md-block">
+      <div class="container-md">
+        <div class="row align-items-center">
+          <div class="col">
+
+            <!-- Heading -->
+            <h1 class="fw-bold text-white mb-2">
+              اعدادات الحساب
+            </h1>
+
+            <!-- Text -->
+            <p class="fs-lg text-white-75 mb-0">
+              اعدادات ل <a class="text-reset" href="mailto:dhgamache@gmail.com">dhgamache@gmail.com</a>
+            </p>
+
+          </div>
+          <div class="col-auto">
+
+            <!-- Button -->
+            <button class="btn btn-sm btn-gray-300-20">
+             تسجيل الخروج
+            </button>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </header>
+
+    <!-- MAIN -->
+    <main class="pb-8 pb-md-11 mt-md-n6">
+      <div class="container-md">
+        <div class="row">
+          <div class="col-12 col-md-3">
+
+            <!-- Card -->
+            <div class="card card-bleed border-bottom border-bottom-md-0 shadow-light-lg">
+
+              <!-- Collapse -->
+              <div class="collapse d-md-block" id="sidenavCollapse">
+                <div class="card-body">
+
+                  <!-- Heading -->
+                  <h6 class="fw-bold text-uppercase mb-3">
+                    الحساب
+                  </h6>
+
+                  <!-- List -->
+                  <ul class="card-list list text-gray-700 mb-6">
+                    <li class="list-item">
+                      <a class="list-link text-reset" href="/account/account-general">
+                        عام
+                      </a>
+                    </li>
+                    <li class="list-item">
+                      <a class="list-link text-reset" href="/account/account-security">
+                        الامان وكلمة المرور
+
+                      </a>
+                    </li>
+                    <li class="list-item active">
+                      <a class="list-link text-reset" href="/account/account-notifications">
+الاشعارات                      </a>
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="col-12 col-md-9">
+
+            <!-- Card -->
+            <div class="card card-bleed shadow-light-lg mb-6">
+              <div class="card-header">
+
+                <!-- Title -->
+                <h4 class="mb-0">
+                  اشعارات التطبيق
+                </h4>
+
+              </div>
+              <div class="card-body">
+
+                <!-- List group -->
+                <div class="list-group list-group-flush">
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <p class="mb-0">
+                          التذكير
+                        </p>
+
+                        <!-- Text -->
+                        <small class="text-gray-700">
+                          نذكرك ب امور ونشاطات حسابك
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Select -->
+                        <select class="form-select form-select-xs" data-choices>
+                          <option value="weekly">يومي</option>
+                          <option value="weekly">اسبوعي</option>
+                          <option value="weekly">شهري</option>
+                        </select>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="list-group-item">
+                    <div class="row align-items-center">
+                      <div class="col">
+
+                        <!-- Heading -->
+                        <p class="mb-0">
+                          التقارير
+                        </p>
+
+                        <!-- Text -->
+                        <small class="text-gray-700">
+                          عندما يقوم الاخرون بالابلاغ عن مستخدم
+                        </small>
+
+                      </div>
+                      <div class="col-auto">
+
+                        <!-- Switch -->
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" id="switchThree" checked>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </main>
+
+    <!-- CURVE -->
+    <div class="position-relative">
+      <div class="shape shape-bottom shape-fluid-x text-dark">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-8 py-md-11 bg-dark" style="text-align: center;" >
+      <div class="row" style="text-align: center;" >
+        <div class="col-12" style="text-align: center;">
+          <!-- Brand -->
+          <span class="text-primary text-white" >PalWork</span>
+        </div>
+      </div> <!-- / .row -->
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>

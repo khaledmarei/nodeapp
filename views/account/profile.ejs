@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>PalWork-AccountProfile</title>
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+
+    <link href="multiselect.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-156446909-2");
+    
+    </script>
+
+  <script>
+    $(document).ready(function(){
+      $("#modifyDataB").click(function(){
+        if($("#modifyDataD").hasClass("hide") === true){
+          $("#modifyDataD").removeClass("hide");
+        }
+        else{
+          $("#modifyDataD").addClass("hide");
+        }
+      });
+    });
+
+
+      function fadeOut(){
+        document.getElementById("modifyDataD").style.transition = "opacity 0.5s linear 0s";
+        document.getElementById("modifyDataD").style.opacity = 0;
+      }
+
+      function fadeIn(){
+        document.getElementById("modifyDataD").style.transition = "opacity 0.5s linear 0s";
+        document.getElementById("modifyDataD").style.opacity = 1;
+      }
+
+  </script>
+
+  <style>
+    .hide {
+      display: none;
+    }
+
+
+    .fileUpload {
+	background: rgb(51,94,234);
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 7.5px;
+	color: #fff;
+	font-size: 1em;
+	font-weight: bold;
+	overflow: hidden;
+	padding: 0.875em;/*14px/16px*/
+	position: relative;
+	text-align: center;
+	width: 120px;
+   cursor: pointer;
+}
+.fileUpload:hover, .fileUpload:active, .fileUpload:focus {
+	background: rgb(51,94,234);
+  cursor: pointer;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 148px;
+    height: 46px;
+  cursor: pointer;
+}
+
+input[type="file"] {
+    position: fixed;
+    right: 100%;
+    bottom: 100%;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+  </style>
+
+
+  </head>
+  <body class="bg-light" style="font-family: 'Tajawal', sans-serif;">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" dir="ltr">
+      <div class="container">
+    
+        <!-- Brand -->
+        <a class="navbar-brand" href="/">
+          <span class="text-primary">PalWork</span>
+        </a>
+    
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Collapse -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+    
+          <!-- Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fe fe-x"></i>
+          </button>
+    
+          <!-- Navigation -->
+          <ul class="navbar-nav ms-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="" >
+                المجتمع
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarAccount">
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/posts&courses/Posts">
+                    المنشورات
+                  </a>
+                </li>
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/posts&courses/blog-search">
+                    قوي نفسك في ورشة تدريبية
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+
+            <li class="nav-item ">
+              <a class="nav-link " id="navbarPages" href="/find/FindContractor" >
+                احصل على عمل
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " id="navbarDocumentation" href="/find/FindWorker" >
+                ايجاد عامل
+              </a>
+            </li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="" >
+                الحساب
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarAccount">
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/account/account-general">
+                    الاعدادات
+                  </a>
+                </li>
+                <!-- <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/singup&in&password/singIn">
+                    تسجيل الدخول
+                  </a>
+                </li> -->
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/singup&in&password/singIn">
+                    تسجيل الخروج
+                  </a>
+                </li>
+                <!-- <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle"  href="/singup&in&password/singUp">
+                    انشاء حساب
+                  </a>
+                </li> -->
+                <li class="dropdown-item dropend">
+                  <a class="dropdown-link dropdown-toggle" href="/account/profile">
+                    صفحتي
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+
+          </ul>
+    
+          <!-- Button -->
+    
+        </div>
+    
+      </div>
+    </nav>
+
+
+    <section>
+      <div class="container" >
+        <div class="row">
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin: 50px 0 0px 0;">
+            <button type="button" class="btn btn-outline-primary" id="modifyDataB">عدل بياناتك ليراها الاخرون</button>
+          </div>
+
+            <div id="modifyDataD"  class="hide" dir="rtl" style="margin: 30px 0 0 0;">
+
+              <!-- Form -->
+              <form class="mb-6">
+                <div class="row" >  
+
+                  <!-- UserName -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      الاسم الرباعي
+                    </label>
+                    <input type="text" class="form-control" id="email" placeholder="علام عبد اللطيف محمود لحلوح">
+                  </div>
+
+                  <!-- Age -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      العمر
+                    </label>
+                    <input type="number" class="form-control" id="email" placeholder="30" min="0">
+                  </div>
+
+                  <!-- city -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      مكان اقامتك الان
+                    </label> <br>
+                    <select class="selectpicker remove-example w-50"  >
+                      <option value="Mustard">جنين</option>
+                      <option value="Mustard">الخليل</option>
+                      <option value="Ketchup">نابلس</option>
+                      <option value="Ketchup">غزة</option>
+                      <option value="Ketchup">خانيونس</option>
+                      <option value="Ketchup">رام الله</option>
+                      <option value="Ketchup">قلقيلية</option>
+                      <option value="Mustard">القدس</option>
+                      <option value="Ketchup">تل الربيع</option>
+                      <option value="Ketchup"> صفد </option>
+                      <option value="Ketchup"> بيت لحم </option>
+                      <option value="Ketchup">حيفا</option>
+                      <option value="Ketchup">رفح</option>
+                      <option value="Ketchup">بيت لحم</option>
+                      <option value="Mustard">بيسان</option>
+                      <option value="Mustard">عسقلان</option>
+                      <option value="Ketchup">عكا</option>
+                      <option value="Ketchup">قيسارية </option>
+                      <option value="Ketchup">البيرة</option>
+                      <option value="Mustard">اللد</option>
+                      <option value="Ketchup">الرملة</option>
+                      <option value="Ketchup"> يافا </option>
+                      <option value="Ketchup">اريحا</option>
+                      <option value="Mustard">اي مكان</option>
+                    </select>
+                  </div>
+
+                  <!-- city -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      هل تمتلك تصريح
+                    </label> <br>
+                    <select class="selectpicker remove-example w-50"  >
+                      <option value="Ketchup">نعم</option>
+                      <option value="Ketchup">لا</option>
+                    </select>
+                  </div>
+
+                  <!-- Age -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      الاجر اليومي بالشيكل
+                    </label>
+                    <input type="number" class="form-control" id="email" placeholder="30" min="0" >
+                  </div>
+
+
+                  <!-- city -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      مجالات العمل
+                    </label> <br>
+                    <select id="profetionSelect" class="selectpicker remove-example w-50" multiple="multiple" class="form-control" >
+                      <option value="Mustard"> حفار </option>
+                      <option value="Ketchup"> بناء </option>
+                      <option value="Ketchup"> قصير </option>
+                      <option value="Ketchup">كهربائي</option>
+                      <option value="Mustard"> بلاط </option>
+                      <option value="Ketchup"> دهان </option>
+                      <option value="Ketchup"> بناء حجر </option>
+                      <option value="Ketchup">قرميد</option>
+                    </select>
+                  </div>
+
+                  <!-- city -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      متاح للعمل الان
+                    </label> <br>
+                    <select class="selectpicker remove-example w-50"  >
+                      <option value="Ketchup">نعم</option>
+                      <option value="Ketchup">لا</option>
+                    </select>
+                  </div>
+            
+
+
+                  <!-- whatsappNumber -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      رقم الواتساب
+                    </label>
+                    <input type="text" class="form-control" id="email" placeholder="+972598875655">
+                  </div>
+
+                  <!-- worker or contractor -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      عامل ام مقاول؟
+                    </label> <br>
+                    <select class="selectpicker remove-example w-50"  >
+                      <option value="Ketchup">عامل</option>
+                      <option value="Ketchup">مقاول</option>
+                    </select>
+                  </div>
+
+
+                  <!-- provid health insurance -->
+                  <div class="form-group col-12 col-md-5 col-lg-4 col-sm-12">
+                    <label class="form-label" for="email">
+                      ان كنت مقاول هل توفر الضمان الصحي لعاملك؟
+                    </label> <br>
+                    <select class="selectpicker remove-example w-50"  >
+                      <option value="Ketchup">نعم</option>
+                      <option value="Ketchup">لا</option>
+                    </select>
+                  </div>
+
+                  <!-- Submit -->
+                  <div class="row" style="text-align: center; justify-content: center; margin-top: 40px;">
+                    <button class="btn btn-primary col-12 col-lg-4 col-md-5 col-sm-6  " type="submit">
+                      احفظ التغييرات
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section style="margin-top: 50px; text-align: center; justify-content: center;" >
+      <div class="container" >
+        <h1 class="text-primary">اضف منشور</h1>
+      <form class="mb-6">
+        <div class="row" style="text-align: center; justify-content: center;">  
+          <!-- UserName -->
+            <div class="col-12">
+              <textarea placeholder="بم تفكر؟" style="width: 60%;" rows="7" ></textarea>
+            </div>
+
+            <div class="row col-12" style="width: 60%; text-align: center; justify-content: center;" >
+              <div class="fileUpload col-4" style="text-align: center; justify-content: center; margin: 20px 50px 20px 50px;">
+                <input type="file" class="upload" accept="image/*"  />
+                حمل وسائط
+              </div>
+
+              <div class="fileUpload col-4" style="text-align: center; justify-content: center; margin: 20px 50px 20px 50px;">
+                <input type="submit" class="upload"  />
+                نشر
+              </div>
+            </div>
+
+            <!-- <div class="row col-12" style="text-align: center; justify-content: center;">
+              <div class="fileUpload col-6" style="width: 30%;">
+                <input type="file" class="upload"  />
+                <span class="col-6" >حمل وسائط</span>
+              </div>
+
+              <div class="col-lg-6">            
+                <button class="btn btn-primary col-lg-6 " type="submit"  style="width: 30%;">
+                نشر
+                </button>
+              </div>
+            </div> -->
+
+        </div>
+      </form>
+    </div>
+    </section>
+
+    
+
+    <!-- ARTICLES -->
+    <section style="margin: 0 7.5% 0 7.5%;">
+      <div class="container" >
+        <div class="row">
+
+
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin-bottom: 50px; margin-top: 50px;">
+
+            <!-- Card -->
+            <div class="card mb-6 shadow-light-lg lift lift-lg">
+
+              <!-- Image -->
+              <a class="card-img-top" href="#!">
+
+                <!-- Image -->
+                <img src="../assets/img/photos/photo-15.jpg" alt="..." class="card-img-top">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-bottom shape-fluid-x text-white">
+                    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+                </div>
+
+              </a>
+
+              <!-- Body -->
+              <a class="card-body" href="#!">
+
+                <!-- Heading -->
+                <h3>
+                  ورشة تدريبية للبلاط في جنين
+                </h3>
+
+                <!-- Text -->
+                <p class="mb-0 text-muted">
+                   سنقوم بتعليمك حرفة البلاط في وقت قياسي وباتقان لتنافس جميع العمال في هذه المهنة بسعر مغري 1000 شيكل.
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta mt-auto" href="#!">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm me-2">
+                  <img src="../assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+                <!-- Author -->
+                <h6 class="text-uppercase text-muted me-2 mb-0">
+                   علام لحلوح
+                </h6>
+
+                
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2005-09-07">  سبتمبر 07  </time>
+                </p>
+
+              </a>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin-bottom: 50px; margin-top: 50px;">
+
+            <!-- Card -->
+            <div class="card mb-6 shadow-light-lg lift lift-lg">
+
+              <!-- Image -->
+              <a class="card-img-top" href="#!">
+
+                <!-- Image -->
+                <img src="../assets/img/photos/photo-15.jpg" alt="..." class="card-img-top">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-bottom shape-fluid-x text-white">
+                    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+                </div>
+
+              </a>
+
+              <!-- Body -->
+              <a class="card-body" href="#!">
+
+                <!-- Heading -->
+                <h3>
+                  ورشة تدريبية للبلاط في جنين
+                </h3>
+
+                <!-- Text -->
+                <p class="mb-0 text-muted">
+                   سنقوم بتعليمك حرفة البلاط في وقت قياسي وباتقان لتنافس جميع العمال في هذه المهنة بسعر مغري 1000 شيكل.
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta mt-auto" href="#!">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm me-2">
+                  <img src="../assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+                <!-- Author -->
+                <h6 class="text-uppercase text-muted me-2 mb-0">
+                   علام لحلوح
+                </h6>
+
+                
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2005-09-07">  سبتمبر 07  </time>
+                </p>
+
+              </a>
+            </div>
+          </div>
+          
+
+
+
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin-bottom: 50px; margin-top: 50px;">
+
+            <!-- Card -->
+            <div class="card mb-6 shadow-light-lg lift lift-lg">
+
+              <!-- Image -->
+              <a class="card-img-top" href="#!">
+
+                <!-- Image -->
+                <img src="../assets/img/photos/photo-15.jpg" alt="..." class="card-img-top">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-bottom shape-fluid-x text-white">
+                    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+                </div>
+
+              </a>
+
+              <!-- Body -->
+              <a class="card-body" href="#!">
+
+                <!-- Heading -->
+                <h3>
+                  ورشة تدريبية للبلاط في جنين
+                </h3>
+
+                <!-- Text -->
+                <p class="mb-0 text-muted">
+                   سنقوم بتعليمك حرفة البلاط في وقت قياسي وباتقان لتنافس جميع العمال في هذه المهنة بسعر مغري 1000 شيكل.
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta mt-auto" href="#!">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm me-2">
+                  <img src="../assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+                <!-- Author -->
+                <h6 class="text-uppercase text-muted me-2 mb-0">
+                   علام لحلوح
+                </h6>
+
+                
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2005-09-07">  سبتمبر 07  </time>
+                </p>
+
+              </a>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin-bottom: 50px; margin-top: 50px;">
+
+            <!-- Card -->
+            <div class="card mb-6 shadow-light-lg lift lift-lg">
+
+              <!-- Image -->
+              <a class="card-img-top" href="#!">
+
+                <!-- Image -->
+                <img src="../assets/img/photos/photo-15.jpg" alt="..." class="card-img-top">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-bottom shape-fluid-x text-white">
+                    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+                </div>
+
+              </a>
+
+              <!-- Body -->
+              <a class="card-body" href="#!">
+
+                <!-- Heading -->
+                <h3>
+                  ورشة تدريبية للبلاط في جنين
+                </h3>
+
+                <!-- Text -->
+                <p class="mb-0 text-muted">
+                   سنقوم بتعليمك حرفة البلاط في وقت قياسي وباتقان لتنافس جميع العمال في هذه المهنة بسعر مغري 1000 شيكل.
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta mt-auto" href="#!">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm me-2">
+                  <img src="../assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+                <!-- Author -->
+                <h6 class="text-uppercase text-muted me-2 mb-0">
+                   علام لحلوح
+                </h6>
+
+                
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2005-09-07">  سبتمبر 07  </time>
+                </p>
+
+              </a>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin-bottom: 50px; margin-top: 50px;">
+
+            <!-- Card -->
+            <div class="card mb-6 shadow-light-lg lift lift-lg">
+
+              <!-- Image -->
+              <a class="card-img-top" href="#!">
+
+                <!-- Image -->
+                <img src="../assets/img/photos/photo-15.jpg" alt="..." class="card-img-top">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-bottom shape-fluid-x text-white">
+                    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+                </div>
+
+              </a>
+
+              <!-- Body -->
+              <a class="card-body" href="#!">
+
+                <!-- Heading -->
+                <h3>
+                  ورشة تدريبية للبلاط في جنين
+                </h3>
+
+                <!-- Text -->
+                <p class="mb-0 text-muted">
+                   سنقوم بتعليمك حرفة البلاط في وقت قياسي وباتقان لتنافس جميع العمال في هذه المهنة بسعر مغري 1000 شيكل.
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta mt-auto" href="#!">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm me-2">
+                  <img src="../assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+                <!-- Author -->
+                <h6 class="text-uppercase text-muted me-2 mb-0">
+                   علام لحلوح
+                </h6>
+
+                
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2005-09-07">  سبتمبر 07  </time>
+                </p>
+
+              </a>
+            </div>
+          </div>
+
+
+
+          <div class="col-12 col-md-12 col-lg-12 d-flex" style="margin-bottom: 50px; margin-top: 50px;">
+
+            <!-- Card -->
+            <div class="card mb-6 shadow-light-lg lift lift-lg">
+
+              <!-- Image -->
+              <a class="card-img-top" href="#!">
+
+                <!-- Image -->
+                <img src="../assets/img/photos/photo-15.jpg" alt="..." class="card-img-top">
+
+                <!-- Shape -->
+                <div class="position-relative">
+                  <div class="shape shape-bottom shape-fluid-x text-white">
+                    <svg viewBox="0 0 0 0" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+                </div>
+
+              </a>
+
+              <!-- Body -->
+              <a class="card-body" href="#!">
+
+                <!-- Heading -->
+                <h3>
+                  ورشة تدريبية للبلاط في جنين
+                </h3>
+
+                <!-- Text -->
+                <p class="mb-0 text-muted">
+                   سنقوم بتعليمك حرفة البلاط في وقت قياسي وباتقان لتنافس جميع العمال في هذه المهنة بسعر مغري 1000 شيكل.
+                </p>
+
+              </a>
+
+              <!-- Meta -->
+              <a class="card-meta mt-auto" href="#!">
+
+                <!-- Divider -->
+                <hr class="card-meta-divider">
+
+                <!-- Avatar -->
+                <div class="avatar avatar-sm me-2">
+                  <img src="../assets/img/avatars/avatar-1.jpg" alt="..." class="avatar-img rounded-circle">
+                </div>
+
+                <!-- Author -->
+                <h6 class="text-uppercase text-muted me-2 mb-0">
+                   علام لحلوح
+                </h6>
+
+                
+
+                <!-- Date -->
+                <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                  <time datetime="2005-09-07">  سبتمبر 07  </time>
+                </p>
+
+              </a>
+            </div>
+          </div>
+
+    </section>
+
+
+
+    <!-- CURVE -->
+    <div class="position-relative">
+      <div class="shape shape-bottom shape-fluid-x text-dark">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="py-8 py-md-11 bg-dark" style="text-align: center;" >
+
+        <div class="row" style="text-align: center;" >
+          <div class="col-12" style="text-align: center;">
+            <!-- Brand -->
+            <span class="text-primary text-white" >PalWork</span>
+          </div>
+        </div> <!-- / .row -->
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="multiple-select.js"></script>
+<script>
+    $(function() {
+        $('#profetionSelect').change(function() {
+            console.log($(this).val());
+        }).multipleSelect({
+            width: '100%'
+        });
+    });
+</script>
+
+<!-- Using a local copy -->
+
+<!-- Include the default stylesheet -->
+<link rel="stylesheet" type="text/css" href="multiple-select.css">
+<!-- Include plugin -->
+<script src="multiple-select.js"></script>
+
+<!-- Or using a CDN -->
+
+<!-- Include the default stylesheet -->
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/wenzhixin/multiple-select/e14b36de/multiple-select.css">
+<!-- Include plugin -->
+<script src="https://cdn.rawgit.com/wenzhixin/multiple-select/e14b36de/multiple-select.js"></script>
+
+</body>
+</html>

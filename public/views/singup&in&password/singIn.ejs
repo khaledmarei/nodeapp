@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" type="image/x-icon" />
+    
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css" />
+    
+    <!-- Libs CSS -->
+    <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
+    
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+    
+    <!-- Title -->
+    <title>PalWork-SignSignIn</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" type="image/x-icon" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156446909-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+    
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-156446909-2");
+    
+    </script>
+  </head>
+  <body style="font-family: 'Tajawal', sans-serif;">
+
+    <!-- CONTENT -->
+    <section class="section-border border-primary">
+      <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center gx-0 min-vh-100">
+          <div class="col-8 col-md-6 col-lg-7 offset-md-1 order-md-2 mt-auto mt-md-0 pt-8 pb-4 py-md-11">
+
+            <!-- Image -->
+            <img src="../assets/img/illustrations/illustration-2.png" alt="..." class="img-fluid">
+
+          </div>
+          <div class="col-12 col-md-5 col-lg-4 order-md-1 mb-auto mb-md-0 pb-8 py-md-11" dir="rtl">
+
+            <!-- Heading -->
+            <h1 class="mb-0 fw-bold text-center">
+              تسجيل الدخول
+            </h1>
+
+            <!-- Text -->
+            <p class="mb-6 text-center text-muted">
+              اهلا بك مجددا
+            </p>
+
+            
+           <!-- Form -->
+            <form class="mb-6" action="/singup&in&password/singIn" method="post">
+
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label" for="email">
+                  رقم الهاتف
+                </label>
+                <input type="tel" class="form-control" id="email" placeholder="05** **** **" name="singInPhoneNumber" required>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group mb-5">
+                <label class="form-label" for="password">
+                  كلمة المرور
+                </label>
+                <input type="text" class="form-control" id="password" placeholder="ادخل كلمة المرور" name="singInPassWord" required>
+              </div>
+
+              <!-- Submit -->
+              <button class="btn w-100 btn-primary" type="submit">
+                سجل الان 
+              </button>
+              
+
+            </form>
+
+            <!-- Text -->
+            <p class="mb-0 fs-sm text-center text-muted">
+              لا تمتلك حساب حتى الان؟ <a href="/singup&in&password/singUp">انشئ حساب الان</a>.
+            </p>
+
+            <!-- Text -->
+            <p class="mb-0 fs-sm text-center text-muted">
+              هل نسيت كلمة المرور؟ <a href="/singup&in&password/getPassword">استرجاع</a>.
+            </p>
+
+          </div>
+        </div> <!-- / .row -->
+      </div> <!-- / .container -->
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <!-- Map JS -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    
+    <!-- Vendor JS -->
+    <script src="../assets/js/vendor.bundle.js"></script>
+    
+    <!-- Theme JS -->
+    <script src="../assets/js/theme.bundle.js"></script>
+
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>
